@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
     <style>
-      p{}
       .tools {color: #7a9bbf;
         text-decoration:none;
         font-size:.9rem;
@@ -15,6 +14,7 @@
         transition:color .2s;}
       .tools {display:flex;gap:2rem;list-style:none;}
 
+      nav
       nav a,
       nav a:link,
       nav a:visited,
@@ -23,6 +23,7 @@
         text-decoration: none !important;
         color: #7ab3d4 !important;}
       nav a:hover{color:#00d4ff !important};
+
 
       .link {display:flex;
           justify-content:center;
@@ -42,6 +43,31 @@
           align-items:center;
           gap:.6rem;
           transition:all .2s;}
+
+      #page1 {min-height:100vh;
+          display: flex ;
+          grid-template-columns:1fr 1fr;
+          align-items:center;
+          padding:8rem 5vw 4rem;gap:3rem;
+          position:relative;overflow:hidden;}
+      .btn_view {background:linear-gradient(135deg,#00d4ff,#0066ff);color:#fff;border:none;
+          padding:.8rem 2rem;border-radius:50px;
+          font-family:'DM Sans',sans-serif;font-size:.95rem;font-weight:500;
+          cursor:pointer;transition:transform .2s,opacity .2s;text-decoration:none;
+          display:inline-flex;align-items:center;gap:.5rem;}
+      .btn_contact {background:transparent;color:#00d4ff;
+          border:1.5px solid rgba(0,212,255,0.15);
+          padding:.8rem 2rem;border-radius:50px;
+          font-family:'DM Sans',sans-serif;font-size:.95rem;font-weight:500;
+          cursor:pointer;transition:all .2s;text-decoration:none;
+          display:inline-flex;align-items:center;gap:.5rem;}
+    .btn_view :hover{transform:translateY(-2px);opacity:.9}
+    .btn_contact:hover{border-color:#00d4ff;background:rgba(0,212,255,.07)}_
+
+      footer{
+          border-top:1px solid rgba(0,212,255,0.15);
+          padding:2rem 5vw; display:flex; justify-content:space-between; align-items:center;
+          color:#7a9bbf;font-size:.85rem;}
     </style>
   </head>
 
@@ -75,8 +101,30 @@
         </ul>
       </nav>
 
-      <div>
-        <!-- Gambar Profile -->
+      <section id="page1">
+        <div class="page_glow"></div>
+        <div class="page_glow2"></div>
+        <div class="page_left">
+        <!-- Deskripsi Latar belakang-->
+          <h1 style="font-family:'Syne',sans-serif;line-height:1.2">Hi, I'm <span>Isa</span> 👋</h1>
+          <p style="color:#7a9bbf;font-size:1.1rem;margin-bottom:.5rem;font-weight:500">Mahasiswa Informatika Semester 4<br>
+            Universitas Mercu Buana Yogyakarta</p>
+          <p>Saya mempelajari banyak hal baru terutama terkait dengan jurusan yang saya ambil,<br>
+            menghadapi tantangan serta banyak problem adalah hal yang menarik untuk saya </p>
+
+          <div class="page_button" style="display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:3rem">
+            <a href="#projects" class="btn_view">View My Work →</a>
+            <a href="#contact" class="btn_contact">Contact Me</a>
+          </div>
+
+          <div class="page_stat">
+            <p>20+</p><p>Projects</p>
+            <p>1+</p><p>Years</p>
+            <p>0</p><p>Client</p>
+          </div>
+        </div>
+
+            <!-- Gambar Profile -->
         <div>
           <img src="profile.png" style="text-align: center;display: flex; width: 400px; height: 400px;background:#0099cc;box-shadow:0 0 12px #0099cc">
           <p>Current status</p>
@@ -84,29 +132,11 @@
           <p>Top Skill</p>
           <p>UI/UX</p>
         </div>
-
-        <!-- Deskripsi Latar belakang-->
-        <h1 style="font-family:'Syne',sans-serif;line-height:1.2">Hi, I'm <span>Isa</span> 👋</h1>
-        <p style="color:#7a9bbf;font-size:1.1rem;margin-bottom:.5rem;font-weight:500">Mahasiswa Informatika Semester 4<br>
-        Universitas Mercu Buana Yogyakarta</p>
-        <p>Saya mempelajari banyak hal baru terutama terkait dengan jurusan yang saya ambil,<br>
-        menghadapi tantangan serta banyak problem adalah hal yang menarik untuk saya </p>
-      </div>
-
-      <div>
-        <a href="#projects">View My Work →</a>
-        <a href="">Contact Me</a>
-      </div>
-
-      <div class="stats">
-        <p>20+</p><p>Projects</p>
-        <p>1+</p><p>Years</p>
-        <p>0</p><p>Client</p>
-      </div>
+      </section>
     
     <section style="background: #0d1626">
       <div style="max-width:650px;margin:0 auto;text-align:center;">
-        <p style="text-align:center">Always Ready To Make Something New</p>
+        <p style="color: #7a9bbf;margin-top:.5rem; text-align:center">Always Ready To Make Something New</p>
         <h2 style="text-align:center; font-family:'Syne',sans-serif;line-height:1.2">Mari <span>Berkolaborasi</span></h2>
         <p style="color: #7a9bbf;margin-top:.5rem; text-align:center">Punya project menarik dan ingin membangun kerjasama dalam menyelesaikannya, <br> Anda bisa menghubungi saya kapanpun!</p>
         <div style="margin-top:2.5rem;background: #0d1a2e;border:1px solid rgba(0,212,255,0.15);border-radius:20px;padding:2.5rem">
@@ -132,10 +162,12 @@
       </div>
     </section>
 
-    <footer>
-      <p>Isa.</p>
+    <footer style="font-family:'Syne',sans-serif;font-size:1.1rem;
+      background:linear-gradient(135deg,#00d4ff,#0066ff);-webkit-background-clip:text; -webkit-text-fill-color:transparent">
+      <p>SynsPortofolio</p>
       <p>UI/UX Designer & Frontend Developer</p>
       <p>© 2025 Isa. All rights reserved.</p>
     </footer>
+
   </body>
 </html>
