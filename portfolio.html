@@ -1,11 +1,35 @@
 <!DOCTYPE html>
-<html style="scroll-behavior:smooth">
+<html>
   <head>
     <title>Portfolio Isa Yanus</title>
     <meta charset="Utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Menaruh Link untuk font yang ingin dipakai-->
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
     <style>
+      /*Membuat perpindahan page lebih smooth karna bergerak perlahan ketika otamatis diarahkan ke tampilan lain*/
+      html {scroll-behavior:smooth}
+
+      /*Ukuran text 16px = 1rem*/
+      body {background: #070c14;color: #e8f4fd;font-family:'DM Sans',sans-serif;font-size:16px;line-height:2;overflow-x:hidden;}
+
+      /*Fixed membuat tidak ke scroll ketika di scroll memanjang dari ujung kiri ke kanan serta membuatnya berada dilapisan paling depan agar tidak tertimpa*/
+      /*backdor membuat belakang taskbar menjadi blur*/
+      nav {position:fixed;top:0;left:0;right:0;z-index:999;
+      display:flex;align-items:center;justify-content:space-between;
+      padding: .5rem 5vw;
+      background:rgba(7,12,20,0.85);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(0,212,255,0.15);
+      transition:all .3s;}
+
+      nav h1{font-family:'Syne',sans-serif;
+        font-size:1.4rem;font-weight:800;
+        background:linear-gradient(135deg,#00d4ff,#0066ff);
+        -webkit-background-clip:text;
+        -webkit-text-fill-color:transparent;}
+
+      /* Edit text di class tools */
       .tools {color: #7a9bbf;
         text-decoration:none;
         font-size:.9rem;
@@ -14,7 +38,7 @@
         transition:color .2s;}
       .tools {display:flex;gap:2rem;list-style:none;}
 
-      nav
+      /* Link tidak berubah warna ketika pernah ditekan tetapi tetap berwarna ketika cursor menyentuh */
       nav a,
       nav a:link,
       nav a:visited,
@@ -24,14 +48,42 @@
         color: #7ab3d4 !important;}
       nav a:hover{color:#00d4ff !important};
 
+      /*Membuat efek seperti melayang keatas dan kebawah ketika ada yang memakai animasi*/
+      @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
 
+      /*kotak dengan ukuran 360x360 dengan border 50%(bulat)*/
+      /*background dengan garis kemiringan 135 derajat dari warna cyan transparan ke biru transparan dengan opasity .25 dan .15*/
+      /*garis tepi border dengan warna solid cyann*/
+      /*Tata letak flex agar bisa diedit dalamnya serta membuatnya berpusat ke tengah secara vertikal dan horizontal*/
+      /*Posisi dijadikan acuan untuk posisi absolut yang ada didalamnya*/
+      .avatar-ring{
+        width:360px;height:360px;border-radius:50%;
+        background:linear-gradient(135deg,rgba(0,212,255,.25),rgba(0,102,255,.15));
+        border:2px solid rgba(0,212,255,.3);
+        display:flex; align-items:center;justify-content:center;
+        position:relative;
+        animation:float 4s ease-in-out infinite;}
+
+      .avatar_inner{
+          width:300px;height:300px;border-radius:50%;
+          border:3px solid rgba(0,212,255,.4);
+          display:flex;align-items:center;justify-content:center;}
+
+      /*Menempatkan jarak di dalam kotaknya 2rem*/
+      /*Membuat responsivitas ketika layar kecil maka kotak akan pindah ke baris baru */
+      /*Memberi jarak dengan elemen diatasnya 2rem*/
       .link {display:flex;
           justify-content:center;
           gap:2rem; 
           flex-wrap:wrap;
           margin-top:2rem}
-      .link svg{width:16px;height:16px;fill:currentColor}
-      .link:hover{border-color:#00d4ff;color:#00d4ff}
+
+      /*Jarak dalam elemen diatur oleh padding .8 untuk atas bawah dan 1.6 untuk kiri kanan*/
+      /*Membuat sudut border seperti kapsul*/
+      /*Garis bawah di hilangkan dengan none*/
+      /*Menjadikan isi tombol sejajar horizontal ketengah dengan jarak 6rem*/
+      /*Perubahan warna akan beranimasi halus 0.2s untuk hover*/
+      /*Fill membuat warna sama seperti sekarang (default putih)*/
       .list_link {background:#0d1a2e;
           border:1px solid rgba(0,212,255,0.15);
           padding:.8rem 1.6rem;
@@ -43,13 +95,21 @@
           align-items:center;
           gap:.6rem;
           transition:all .2s;}
+      .link:hover{border-color:#00d4ff;color:#00d4ff}
+      .link svg{width:16px;height:16px;fill:currentColor}
 
-      #page1 {min-height:100vh;
-          display: flex ;
+      #page1 {
+          min-height:115vh;
+          display: flex;
           grid-template-columns:1fr 1fr;
           align-items:center;
-          padding:8rem 5vw 4rem;gap:3rem;
+          justify-content: space-between;
+          padding:0 10%;
           position:relative;overflow:hidden;}
+      #page1 h1 span{
+          background:linear-gradient(135deg,#00d4ff,#0066ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+      .page_stat {display:flex;gap:2.5rem}
+
       .btn_view {background:linear-gradient(135deg,#00d4ff,#0066ff);color:#fff;border:none;
           padding:.8rem 2rem;border-radius:50px;
           font-family:'DM Sans',sans-serif;font-size:.95rem;font-weight:500;
@@ -62,45 +122,31 @@
           cursor:pointer;transition:all .2s;text-decoration:none;
           display:inline-flex;align-items:center;gap:.5rem;}
       .btn_view :hover{transform:translateY(-2px);opacity:.9}
-      .btn_contact:hover{border-color:#00d4ff;background:rgba(0,212,255,.07)}_
+      .btn_contact :hover{border-color:#00d4ff;background:rgba(0,212,255,.07)}
 
     </style>
   </head>
 
-  <body style="background: #070c14;color: #e8f4fd;font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.7;overflow-x:hidden;">
-
-      <!-- Baris Atas -->
-    <nav style="
-      position:fixed;top:0;left:0;right:0;z-index:999;
-      display:flex;align-items:center;justify-content:space-between;
-      padding:1.2rem 5vw;
-      background:rgba(7,12,20,0.85);
-      backdrop-filter:blur(16px);
-      border-bottom:1px solid rgba(0,212,255,0.15);
-      transition:all .3s;">
-
+  <body>
+    <!-- Baris Atas -->
+    <nav>
         <!--Logo di pojok kiri atas-->
-      <h1 style="
-        font-family:'Syne',sans-serif;
-        font-size:1.4rem;font-weight:800;
-        background:linear-gradient(135deg,#00d4ff,#0066ff);
-        -webkit-background-clip:text;
-        -webkit-text-fill-color:transparent;">SynsPortofolio</h1>
+      <h1>SynsPortofolio</h1>
 
         <!-- Tools di pojok atas logo-->
       <ul class="tools">
-            <li><a href="#services">Services</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="https://www.google.com/?hl=ID">Services</a></li>
+            <li><a href="https://www.google.com/?hl=ID">Skills</a></li>
+            <li><a href="https://www.google.com/?hl=ID">Projects</a></li>
+            <li><a href="https://www.google.com/?hl=ID">About</a></li>
+            <li><a href="https://www.google.com/?hl=ID">Contact</a></li>
       </ul>
     </nav>
 
     <section id="page1">
       <div class="page_left">
       <!-- Deskripsi Latar belakang-->
-        <h1 style="font-family:'Syne',sans-serif;line-height:1.2">Hi, I'm <span>Isa</span> 👋</h1>
+        <h1 style="font-family:'Syne',sans-serif;line-height:1.2">Hi, I'm <span>Isa Yanus</span> 👋</h1>
         <p style="color:#7a9bbf;font-size:1.1rem;margin-bottom:.5rem;font-weight:500">Mahasiswa Informatika Semester 4<br>
             Universitas Mercu Buana Yogyakarta</p>
         <p>Saya mempelajari banyak hal baru terutama terkait dengan jurusan yang saya ambil,<br>
@@ -108,11 +154,11 @@
 
         <div class="page_button" style="display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:3rem">
           <a href="#projects" class="btn_view">View My Work →</a>
-          <a href="#contact" class="btn_contact">Contact Me</a>
+          <a href="https://www.instagram.com/" class="btn_contact">Contact Me</a>
         </div>
 
         <div class="page_stat">
-          <p>20+</p><p>Projects</p>
+          <p>5+</p><p>Projects</p>
           <p>1+</p><p>Years</p>
           <p>0</p><p>Client</p>
         </div>
@@ -120,11 +166,12 @@
 
             <!-- Gambar Profile -->
         <div>
-          <img src="profile.png" style="text-align: center;display: flex; width: 400px; height: 400px;background:#0099cc;box-shadow:0 0 12px #0099cc">
-          <p>Current status</p>
-          <p>Designing ✦</p>
-          <p>Top Skill</p>
-          <p>UI/UX</p>
+          <div class="avatar_ring">
+            <img src="profile.png" class="avatar_inner">
+          </div>
+          <p style="color: #7a9bbf;margin-top:.5rem; text-align:center">Current status
+          <br>Designing
+          <br>UI/UX</p>
         </div>
     </section>
     
@@ -140,15 +187,15 @@
         </div>
 
         <div class="link">
-          <a href="www.email.com" class="list_link">
+          <a href="mailto:isayanus22@gmail.com" class="list_link">
             <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
             My Email
           </a>
-          <a href="#" class="list_link">
+          <a href="https://id.linkedin.com/" class="list_link">
             <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
               LinkedIn
           </a>
-          <a href="#" class="list_link">
+          <a href="https://github.com/Synss33" class="list_link">
             <svg viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
             GitHub
           </a>
@@ -166,6 +213,5 @@
       <p>UI/UX Designer & Frontend Developer</p>
       <p>© 2026 SynsPortofolio All rights reserved.</p>
     </footer>
-
   </body>
 </html>
