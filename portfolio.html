@@ -6,125 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Menaruh Link untuk font yang ingin dipakai-->
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-    <style>
-      /*Membuat perpindahan page lebih smooth karna bergerak perlahan ketika otamatis diarahkan ke tampilan lain*/
-      html {scroll-behavior:smooth}
-
-      /*Ukuran text 16px = 1rem*/
-      body {background: #070c14;color: #e8f4fd;font-family:'DM Sans',sans-serif;font-size:16px;line-height:2;overflow-x:hidden;}
-
-      /*Fixed membuat tidak ke scroll ketika di scroll memanjang dari ujung kiri ke kanan serta membuatnya berada dilapisan paling depan agar tidak tertimpa*/
-      /*backdor membuat belakang taskbar menjadi blur*/
-      nav {position:fixed;top:0;left:0;right:0;z-index:999;
-      display:flex;align-items:center;justify-content:space-between;
-      padding: .5rem 5vw;
-      background:rgba(7,12,20,0.85);
-      backdrop-filter:blur(16px);
-      border-bottom:1px solid rgba(0,212,255,0.15);
-      transition:all .3s;}
-
-      nav h1{font-family:'Syne',sans-serif;
-        font-size:1.4rem;font-weight:800;
-        background:linear-gradient(135deg,#00d4ff,#0066ff);
-        -webkit-background-clip:text;
-        -webkit-text-fill-color:transparent;}
-
-      /* Edit text di class tools */
-      .tools {color: #7a9bbf;
-        text-decoration:none;
-        font-size:.9rem;
-        font-weight:500;
-        letter-spacing:.04em;
-        transition:color .2s;}
-      .tools {display:flex;gap:2rem;list-style:none;}
-
-      /* Link tidak berubah warna ketika pernah ditekan tetapi tetap berwarna ketika cursor menyentuh */
-      nav a,
-      nav a:link,
-      nav a:visited,
-      nav a:active,
-      nav a:focus {
-        text-decoration: none !important;
-        color: #7ab3d4 !important;}
-      nav a:hover{color:#00d4ff !important};
-
-      /*Membuat efek seperti melayang keatas dan kebawah ketika ada yang memakai animasi*/
-      @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
-
-      /*kotak dengan ukuran 360x360 dengan border 50%(bulat)*/
-      /*background dengan garis kemiringan 135 derajat dari warna cyan transparan ke biru transparan dengan opasity .25 dan .15*/
-      /*garis tepi border dengan warna solid cyann*/
-      /*Tata letak flex agar bisa diedit dalamnya serta membuatnya berpusat ke tengah secara vertikal dan horizontal*/
-      /*Posisi dijadikan acuan untuk posisi absolut yang ada didalamnya*/
-      .avatar-ring{
-        width:360px;height:360px;border-radius:50%;
-        background:linear-gradient(135deg,rgba(0,212,255,.25),rgba(0,102,255,.15));
-        border:2px solid rgba(0,212,255,.3);
-        display:flex; align-items:center;justify-content:center;
-        position:relative;
-        animation:float 4s ease-in-out infinite;}
-
-      .avatar_inner{
-          width:300px;height:300px;border-radius:50%;
-          border:3px solid rgba(0,212,255,.4);
-          display:flex;align-items:center;justify-content:center;}
-
-      /*Menempatkan jarak di dalam kotaknya 2rem*/
-      /*Membuat responsivitas ketika layar kecil maka kotak akan pindah ke baris baru */
-      /*Memberi jarak dengan elemen diatasnya 2rem*/
-      .link {display:flex;
-          justify-content:center;
-          gap:2rem; 
-          flex-wrap:wrap;
-          margin-top:2rem}
-
-      /*Jarak dalam elemen diatur oleh padding .8 untuk atas bawah dan 1.6 untuk kiri kanan*/
-      /*Membuat sudut border seperti kapsul*/
-      /*Garis bawah di hilangkan dengan none*/
-      /*Menjadikan isi tombol sejajar horizontal ketengah dengan jarak 6rem*/
-      /*Perubahan warna akan beranimasi halus 0.2s untuk hover*/
-      /*Fill membuat warna sama seperti sekarang (default putih)*/
-      .list_link {background:#0d1a2e;
-          border:1px solid rgba(0,212,255,0.15);
-          padding:.8rem 1.6rem;
-          border-radius:50px;
-          color:#e8f4fd;
-          text-decoration:none;
-          font-size:.9rem;
-          display:flex;
-          align-items:center;
-          gap:.6rem;
-          transition:all .2s;}
-      .link:hover{border-color:#00d4ff;color:#00d4ff}
-      .link svg{width:16px;height:16px;fill:currentColor}
-
-      #page1 {
-          min-height:115vh;
-          display: flex;
-          grid-template-columns:1fr 1fr;
-          align-items:center;
-          justify-content: space-between;
-          padding:0 10%;
-          position:relative;overflow:hidden;}
-      #page1 h1 span{
-          background:linear-gradient(135deg,#00d4ff,#0066ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-      .page_stat {display:flex;gap:2.5rem}
-
-      .btn_view {background:linear-gradient(135deg,#00d4ff,#0066ff);color:#fff;border:none;
-          padding:.8rem 2rem;border-radius:50px;
-          font-family:'DM Sans',sans-serif;font-size:.95rem;font-weight:500;
-          cursor:pointer;transition:transform .2s,opacity .2s;text-decoration:none;
-          display:inline-flex;align-items:center;gap:.5rem;}
-      .btn_contact {background:transparent;color:#00d4ff;
-          border:1.5px solid rgba(0,212,255,0.15);
-          padding:.8rem 2rem;border-radius:50px;
-          font-family:'DM Sans',sans-serif;font-size:.95rem;font-weight:500;
-          cursor:pointer;transition:all .2s;text-decoration:none;
-          display:inline-flex;align-items:center;gap:.5rem;}
-      .btn_view :hover{transform:translateY(-2px);opacity:.9}
-      .btn_contact :hover{border-color:#00d4ff;background:rgba(0,212,255,.07)}
-
-    </style>
+    <link rel="stylesheet" href="style.css"/>
   </head>
 
   <body>
@@ -146,44 +28,111 @@
     <section id="page1">
       <div class="page_left">
       <!-- Deskripsi Latar belakang-->
-        <h1 style="font-family:'Syne',sans-serif;line-height:1.2">Hi, I'm <span>Isa Yanus</span> 👋</h1>
-        <p style="color:#7a9bbf;font-size:1.1rem;margin-bottom:.5rem;font-weight:500">Mahasiswa Informatika Semester 4<br>
-            Universitas Mercu Buana Yogyakarta</p>
+        <h1>Hi, I'm <span>Isa Yanus</span> 👋</h1>
+        <h3>Mahasiswa Informatika Semester 4<br>
+            Universitas Mercu Buana Yogyakarta</h3>
         <p>Saya mempelajari banyak hal baru terutama terkait dengan jurusan yang saya ambil,<br>
           menghadapi tantangan serta banyak problem adalah hal yang menarik untuk saya </p>
 
-        <div class="page_button" style="display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:3rem">
+        <div class="page1_button">
           <a href="#projects" class="btn_view">View My Work →</a>
           <a href="https://www.instagram.com/" class="btn_contact">Contact Me</a>
         </div>
 
-        <div class="page_stat">
+        <div class="page1_stat">
           <p>5+</p><p>Projects</p>
           <p>1+</p><p>Years</p>
           <p>0</p><p>Client</p>
         </div>
       </div>
 
-            <!-- Gambar Profile -->
-        <div>
+      <!-- Gambar Profile -->
+        <div class="text_avatar">
           <div class="avatar_ring">
             <img src="profile.png" class="avatar_inner">
           </div>
-          <p style="color: #7a9bbf;margin-top:.5rem; text-align:center">Current status
+          <p>Current status
           <br>Designing
           <br>UI/UX</p>
         </div>
     </section>
+
+    <section id="page2">
+        <div>
+          <h2> My Work Skill & Project </h2>
+          <p> Pembelajar Cepat Yang Fokus Pada Pemecahan Masalah Teknis dan <br> Pembuatan Fitur Yang Ramah Pengguna. </p>
+        </div>
+
+        <div class="marquee">
+          <p class="mar_label">Tech Stack &amp; Tools</p>
+          <div class="tools2">
+            <div class="track">
+            <!-- SET 1 -->
+            <div class="set_tools2">
+              <div class="card"><span class="icon">⚛️</span><span class="name">React</span></div>
+              <div class="card"><span class="icon">🟩</span><span class="name">Node.js</span></div>
+              <div class="card"><span class="icon">🎨</span><span class="name">Figma</span></div>
+              <div class="card"><span class="icon">🐍</span><span class="name">Python</span></div>
+              <div class="card"><span class="icon">📱</span><span class="name">Flutter</span></div>
+              <div class="card"><span class="icon">🔥</span><span class="name">Firebase</span></div>
+              <div class="card"><span class="icon">🗄️</span><span class="name">MySQL</span></div>
+              <div class="card"><span class="icon">🐋</span><span class="name">Docker</span></div>
+              <div class="card"><span class="icon">☁️</span><span class="name">AWS</span></div>
+            </div>
+            <div class="set_tools2">
+              <div class="card"><span class="icon">⚛️</span><span class="name">React</span></div>
+              <div class="card"><span class="icon">🟩</span><span class="name">Node.js</span></div>
+              <div class="card"><span class="icon">🎨</span><span class="name">Figma</span></div>
+              <div class="card"><span class="icon">🐍</span><span class="name">Python</span></div>
+              <div class="card"><span class="icon">📱</span><span class="name">Flutter</span></div>
+              <div class="card"><span class="icon">🔥</span><span class="name">Firebase</span></div>
+              <div class="card"><span class="icon">🗄️</span><span class="name">MySQL</span></div>
+              <div class="card"><span class="icon">🐋</span><span class="name">Docker</span></div>
+              <div class="card"><span class="icon">☁️</span><span class="name">AWS</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Baris 2: gerak ke kanan (class .rev) -->
+        <div class="tools2">
+          <div class="track rev">
+          <!-- SET 1 -->
+            <div class="set_tools2">
+              <div class="card"><span class="icon">🌐</span><span class="name">Vue.js</span></div>
+              <div class="card"><span class="icon">▲</span><span class="name">Next.js</span></div>
+              <div class="card"><span class="icon">🎯</span><span class="name">TypeScript</span></div>
+              <div class="card"><span class="icon">🍃</span><span class="name">MongoDB</span></div>
+              <div class="card"><span class="icon">🐙</span><span class="name">GitHub</span></div>
+              <div class="card"><span class="icon">💨</span><span class="name">Tailwind</span></div>
+              <div class="card"><span class="icon">🦀</span><span class="name">Rust</span></div>
+              <div class="card"><span class="icon">⚡</span><span class="name">Vite</span></div>
+              <div class="card"><span class="icon">🐘</span><span class="name">PostgreSQL</span></div>
+            </div>
+          <!-- SET 2 -->
+             <div class="set_tools2">
+              <div class="card"><span class="icon">🌐</span><span class="name">Vue.js</span></div>
+              <div class="card"><span class="icon">▲</span><span class="name">Next.js</span></div>
+              <div class="card"><span class="icon">🎯</span><span class="name">TypeScript</span></div>
+              <div class="card"><span class="icon">🍃</span><span class="name">MongoDB</span></div>
+              <div class="card"><span class="icon">🐙</span><span class="name">GitHub</span></div>
+              <div class="card"><span class="icon">💨</span><span class="name">Tailwind</span></div>
+              <div class="card"><span class="icon">🦀</span><span class="name">Rust</span></div>
+              <div class="card"><span class="icon">⚡</span><span class="name">Vite</span></div>
+              <div class="card"><span class="icon">🐘</span><span class="name">PostgreSQL</span></div>
+            </div>
+          </div>
+      </div>
+    </section>
     
-    <section style="background: #0d1626">
-      <div style="max-width:650px;margin:0 auto;text-align:center;">
-        <p style="color: #7a9bbf;margin-top:.5rem; text-align:center">Always Ready To Make Something New</p>
-        <h2 style="text-align:center; font-family:'Syne',sans-serif;line-height:1.2">Mari <span>Berkolaborasi</span></h2>
-        <p style="color: #7a9bbf;margin-top:.5rem; text-align:center">Punya project menarik dan ingin membangun kerjasama dalam menyelesaikannya, <br> Anda bisa menghubungi saya kapanpun!</p>
-        <div style="margin-top:2.5rem;background: #0d1a2e;border:1px solid rgba(0,212,255,0.15);border-radius:20px;padding:2.5rem">
-          <p style="font-size:3rem;margin-bottom:1rem">👋</p>
-          <h3 style="font-size:1.5rem;font-weight:700;margin-bottom:.5rem; font-family:'Syne',sans-serif;line-height:1.2">Isa</h3>
-          <p style="color: #7a9bbf;margin-bottom:1.5rem">UI/UX Designer & Frontend Developer</p>
+    <section id="page3">
+      <div class="page3_top">
+        <p>Always Ready To Make Something New</p>
+        <h2>Mari <span>Berkolaborasi</span></h2>
+        <p>Punya project menarik dan ingin membangun kerjasama dalam menyelesaikannya, <br> Anda bisa menghubungi saya kapanpun!</p>
+        <div class="page3_in">
+          <p>👋</p>
+          <h3>Isa</h3>
+          <h4>UI/UX Designer & Frontend Developer</h4>
         </div>
 
         <div class="link">
@@ -203,15 +152,12 @@
       </div>
     </section>
 
-    <footer style="font-family:'Syne',sans-serif;font-size:1.1rem;display: flex;
-      background:linear-gradient(135deg,#00d4ff,#0066ff);
-      -webkit-background-clip:text;-webkit-text-fill-color :transparent
-      border-top:1px solid rgba(0,212,255,0.15);
-      padding:2rem 5vw; display:flex; justify-content:space-between; align-items:center;
-      color:#7a9bbf;font-size:.85rem;">
-      <p>SynsPortofolio</p>
-      <p>UI/UX Designer & Frontend Developer</p>
-      <p>© 2026 SynsPortofolio All rights reserved.</p>
-    </footer>
+    <div class="footer">
+        <footer>
+          <p>SynsPortofolio</p>
+          <p>UI/UX Designer & Frontend Developer</p>
+          <p>© 2026 SynsPortofolio All rights reserved.</p>
+        </footer>
+    </div>
   </body>
 </html>

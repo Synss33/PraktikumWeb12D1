@@ -1,0 +1,222 @@
+      /*Membuat perpindahan page lebih smooth karna bergerak perlahan ketika otamatis diarahkan ke tampilan lain*/
+      html {scroll-behavior:smooth}
+
+      /*Ukuran text 16px = 1rem*/
+      body {background: #070c14;color: #e8f4fd;font-family:'DM Sans',sans-serif;font-size:16px;line-height:2;overflow-x:hidden;}
+
+      /*Fixed membuat tidak ke scroll ketika di scroll memanjang dari ujung kiri ke kanan serta membuatnya berada dilapisan paling depan agar tidak tertimpa*/
+      /*backdor membuat belakang taskbar menjadi blur*/
+      nav {position:fixed;top:0;left:0;right:0;z-index:999;
+      display:flex;align-items:center;justify-content:space-between;
+      padding: .5rem 5vw;
+      background:rgba(7,12,20,0.85);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(0,212,255,0.15);
+      transition:all .3s;}
+
+      nav h1{font-family:'Syne',sans-serif;
+        font-size:1.4rem;font-weight:800;
+        background:linear-gradient(135deg,#00d4ff,#0066ff);
+        -webkit-background-clip:text;
+        -webkit-text-fill-color:transparent;}
+
+      /* Edit text di class tools */
+      .tools {color: #7a9bbf;
+        text-decoration:none;
+        font-size:.9rem;
+        font-weight:500;
+        letter-spacing:.04em;
+        transition:color .2s;}
+      .tools {display:flex;gap:2rem;list-style:none;}
+
+      /* Link tidak berubah warna ketika pernah ditekan tetapi tetap berwarna ketika cursor menyentuh */
+      nav a,
+      nav a:link,
+      nav a:visited,
+      nav a:active,
+      nav a:focus {
+        text-decoration: none !important;
+        color: #7ab3d4 !important;}
+      nav a:hover{color:#00d4ff !important};
+
+      /*Membuat efek seperti melayang keatas dan kebawah ketika ada yang memakai animasi*/
+      @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+
+      .page_left h1{font-family:'Syne',sans-serif;line-height:1.2}
+      .page_left h3 {color:#7a9bbf;font-size:1.1rem;margin-bottom:.5rem;font-weight:500}
+
+      .text_avatar p{color: #7a9bbf;margin-top:.5rem; text-align:center}
+      /*kotak dengan ukuran 360x360 dengan border 50%(bulat)*/
+      /*background dengan garis kemiringan 135 derajat dari warna cyan transparan ke biru transparan dengan opasity .25 dan .15*/
+      /*garis tepi border dengan warna solid cyann*/
+      /*Tata letak flex agar bisa diedit dalamnya serta membuatnya berpusat ke tengah secara vertikal dan horizontal*/
+      /*Posisi dijadikan acuan untuk posisi absolut yang ada didalamnya*/
+      .avatar-ring{
+        width:360px;height:360px;border-radius:50%;
+        background:linear-gradient(135deg,rgba(0,212,255,.25),rgba(0,102,255,.15));
+        border:2px solid rgba(0,212,255,.3);
+        display:flex; align-items:center;justify-content:center;
+        position:relative;
+        animation:float 4s ease-in-out infinite}
+
+      .avatar_inner{
+          width:300px;height:300px;border-radius:50%;
+          border:3px solid rgba(0,212,255,.4);
+          display:flex;align-items:center;justify-content:center}
+
+      #page1 {
+          min-height:115vh;
+          display: flex;
+          grid-template-columns:1fr 1fr;
+          align-items:center;
+          justify-content: space-between;
+          padding:0 10%;
+          position:relative;overflow:hidden}
+      #page1 h1 span{
+          background:linear-gradient(135deg,#00d4ff,#0066ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+      .page1_stat {display:flex;gap:2.5rem}
+
+      .page1_button {display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:3rem}
+      .btn_view {background:linear-gradient(135deg,#00d4ff,#0066ff);color:#fff;border:none;
+          padding:.8rem 2rem;border-radius:50px;
+          font-family:'DM Sans',sans-serif;font-size:.95rem;font-weight:500;
+          cursor:pointer;transition:transform .2s,opacity .2s;text-decoration:none;
+          display:inline-flex;align-items:center;gap:.5rem}
+      .btn_contact {background:transparent;color:#00d4ff;
+          border:1.5px solid rgba(0,212,255,0.15);
+          padding:.8rem 2rem;border-radius:50px;
+          font-family:'DM Sans',sans-serif;font-size:.95rem;font-weight:500;
+          cursor:pointer;transition:all .2s;text-decoration:none;
+          display:inline-flex;align-items:center;gap:.5rem}
+      .btn_view :hover{transform:translateY(-2px);opacity:.9}
+      .btn_contact :hover{border-color:#00d4ff;background:rgba(0,212,255,.07)}
+
+      #page2 {background: #0d1626;}
+      #page2 h2 {text-align: center;font-family:'Syne',sans-serif; line-height: 3;
+      #page2 p {margin-top: 1rem; text-align:center;  color: #7a9bbf}
+      .mar_label {
+        text-align: center;
+        font-size: 10px;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        margin-bottom: 22px;
+      }
+      .tools2 + .tools2 { margin-top: 12px}
+      .tools2:hover .track {animation-play-state: paused}
+
+      .set_tools2  {display: flex;
+          gap: 12px;
+          padding-right: 12px}
+
+      .track {
+      display: flex;
+      width: max-content;
+      animation: marquee-left 25s linear infinite;
+        }
+      .track.rev {
+      animation-name: marquee-right;
+      }
+
+      /* pause saat hover — CSS only! */
+      .tools2 :hover .track {
+        animation-play-state: paused;
+      }
+
+      /* set — satu kelompok kartu */
+      .set_tools2 {
+        display: flex;
+        gap: 12px;
+        padding-right: 12px;
+      }
+      .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: reveal-up 0.6s ease forwards;
+      }
+      .reveal-1 { animation-delay: 0.05s; }
+      .reveal-2 { animation-delay: 0.15s; }
+      .reveal-3 { animation-delay: 0.25s; }
+      .reveal-4 { animation-delay: 0.35s; }
+      .reveal-5 { animation-delay: 0.45s; }
+
+      @keyframes reveal-up {
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      /* ★ KUNCI ANIMASI INFINITE ★
+        -50% = lebar tepat satu set (karena ada 2 set = 100% total)
+        Saat set-1 habis, set-2 sudah menggantikan → seamless */
+      @keyframes marquee-left {
+        from { transform: translateX(0); }
+        to   { transform: translateX(-50%); }
+      }
+      @keyframes marquee-right {
+        from { transform: translateX(-50%); }
+        to   { transform: translateX(0); }
+      }
+
+      .card {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: #161616;
+        border: 1px solid #272727;
+        border-radius: 8px;
+        padding: 10px 18px;
+        white-space: nowrap;
+        transition: background 0.25s, border-color 0.25s, transform 0.25s;
+        cursor: default;
+      }
+      .card:hover {
+      background: #1e1e1e;
+      border-color: #3a3a3a;
+      transform: translateY(-2px);
+      }
+      .icon { font-size: 18px; }
+      .name { font-size: 12px; font-weight: 500; color: #ccc; }
+
+      #page3 {max-width:650px;margin:0 auto;text-align:center}
+      .page3_top p {color: #7a9bbf;margin-top:.5rem; text-align:center; margin-top: 2rem}
+      .page3_top h2 {text-align:center; font-family:'Syne',sans-serif;line-height:1.2}
+
+      .page3_in {margin-top:2.5rem;background: #0d1a2e;border:1px solid rgba(0,212,255,0.15);border-radius:20px;padding:2.5rem}
+      .page3_in p {font-size:3rem;margin-bottom:1rem}
+      .page3_in h4{color: #7a9bbf; margin-bottom:1.5rem}
+      .page3_in h3 {font-size:1.5rem;font-weight:700;margin-bottom:.5rem; font-family:'Syne',sans-serif;line-height:1.2}
+
+      /*Menempatkan jarak di dalam kotaknya 2rem*/
+      /*Membuat responsivitas ketika layar kecil maka kotak akan pindah ke baris baru */
+      /*Memberi jarak dengan elemen diatasnya 2rem*/
+      .link {display:flex;
+          justify-content:center;
+          gap:2rem; 
+          flex-wrap:wrap;
+          margin-top:2rem}
+
+      /*Jarak dalam elemen diatur oleh padding .8 untuk atas bawah dan 1.6 untuk kiri kanan*/
+      /*Membuat sudut border seperti kapsul*/
+      /*Garis bawah di hilangkan dengan none*/
+      /*Menjadikan isi tombol sejajar horizontal ketengah dengan jarak 6rem*/
+      /*Perubahan warna akan beranimasi halus 0.2s untuk hover*/
+      /*Fill membuat warna sama seperti sekarang (default putih)*/
+      .list_link {background:#0d1a2e;
+          border:1px solid rgba(0,212,255,0.15);
+          padding:.8rem 1.6rem;
+          border-radius:50px;
+          color:#e8f4fd;
+          text-decoration:none;
+          font-size:.9rem;
+          display:flex;
+          align-items:center;
+          gap:.6rem;
+          transition:all .2s;}
+      .link:hover{border-color:#00d4ff;color:#00d4ff}
+      .link svg{width:16px;height:16px;fill:currentColor}
+
+      .footer {background: #0d1626; margin-top: 3rem}
+      footer {font-family:'Syne',sans-serif;font-size:1.1rem;display: flex;
+          background:linear-gradient(135deg,#00d4ff,#0066ff);
+          -webkit-background-clip:text;-webkit-text-fill-color :transparent
+          border-top:1px solid rgba(0,212,255,0.15);
+          padding:2rem 5vw; display:flex; justify-content:space-between; align-items:center;
+          color:#7a9bbf;font-size:.85rem;}
