@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <h1 class="logo"><b>CarR<b></h1>
+        <ul class="taskbar">
+            <li><a href="https://www.google.com/?hl=ID">Services</a></li>
+            <li><a href="https://www.google.com/?hl=ID">Skills</a></li>
+            <li><a href="https://www.google.com/?hl=ID">Projects</a></li>
+            <li><a href="https://www.google.com/?hl=ID">About</a></li>
+            <li><a href="https://www.google.com/?hl=ID">Contact</a></li>
+        </ul> 
+    </nav>
+
+    <section id="search">
+        <div class="title">
+            <h1>Car Rental</h1>
+            <p>Find the perfect car for your next adventure</p>
+            <hr>
+        </div>
+        <div class="form-container">
+            <div class="form-group">
+                <label for="pickup">Rental Location:</label>
+                <select id="pickup" name="pickup">
+                    <option value="">Select Location</option>
+                    <option value="location1">Yogyakarta</option>
+                    <option value="location2">Bali</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="pickup-date">Rental Start Date:</label>
+                <input type="date" id="pickup-date" name="pickup-date">
+            </div>
+            <div class="form-group">
+                <label for="return-date">Rental End Date:</label>
+                <input type="date" id="return-date" name="return-date">
+            </div>
+            <button class="btn-primary" type="submit">Search</button>
+        </div>
+    </section>
+
+    <!-- CAR LIST -->
+    <section class="list_car">
+        <h2>Car List</h2>
+        <p>Choose a car according to your taste and needs</p>
+        <br>
+        <div class="car-list">
+            <div class="car-item">
+                <img src="https://imgcdn.oto.com/large/gallery/exterior/38/1654/toyota-avanza-front-angle-low-view-844132.jpg" alt="Car 1">
+                <div class="car-info">
+                    <h3>Toyota Avanza</h3>
+                    <p>7 Seats · Manual · Petrol</p>
+                    <span class="price">Rp 350.000 <small>/ day</small></span>
+                    <a href="#booking" class="btn-card">Rent Now</a>
+                </div>
+            </div>
+            <div class="car-item">
+                <img src="https://www.honda-arta.com/lib/images/news/009733200_1614835436-liputan6-honda-jazz-gen-0.jpeg" alt="Car 2">
+                <div class="car-info">
+                    <h3>Honda Jazz</h3>
+                    <p>5 Seats · Automatic · Petrol</p>
+                    <span class="price">Rp 300.000 <small>/ day</small></span>
+                    <a href="#booking" class="btn-card">Rent Now</a>
+                </div>
+            </div>
+            <div class="car-item">
+                <img src="https://arista-group.co.id/wp-content/uploads/2024/11/pajero-sport.jpg" alt="Car 3">
+                <div class="car-info">
+                    <h3>Mitsubishi Pajero</h3>
+                    <p>7 Seats · Automatic · Diesel</p>
+                    <span class="price">Rp 650.000 <small>/ day</small></span>
+                    <a href="#booking" class="btn-card">Rent Now</a>
+                </div>
+            </div>
+            <div class="car-item">
+                <img src="https://imgcdn.oto.com/large/gallery/exterior/38/1240/toyota-kijang-innova-front-angle-low-view-351782.jpg" alt="Car 4">
+                <div class="car-info">
+                    <h3>Toyota Innova</h3>
+                    <p>8 Seats · Manual · Diesel</p>
+                    <span class="price">Rp 500.000 <small>/ day</small></span>
+                    <a href="#booking" class="btn-card">Rent Now</a>
+                </div>
+            </div>
+            <div class="car-item">
+                <img src="https://arista-group.co.id/wp-content/uploads/2024/11/pajero-sport.jpg" alt="Car 3">
+                <div class="car-info">
+                    <h3>Ferarri Anvetador</h3>
+                    <p>4 Seats · Automatic · Diesel</p>
+                    <span class="price">Rp 50.650.000 <small>/ day</small></span>
+                    <a href="#booking" class="btn-card">Rent Now</a>
+                </div>
+            </div>
+            <div class="car-item">
+                <img src="https://images.unsplash.com/photo-1494905998402-395d579af36f?q=80&w=870&auto=format&fit=crop" alt="Car 4">
+                <div class="car-info">
+                    <h3>Sport Car</h3>
+                    <p>2 Seats · Manual · Diesel</p>
+                    <span class="price">Rp 100.000.000 <small>/ day</small></span>
+                    <a href="#booking" class="btn-card">Rent Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CARA KERJA -->
+    <section class="how-it-works">
+        <div class="section-label">Simple Process</div>
+        <h2 class="section-title">Cara Pemesanan</h2>
+        <p class="section-sub">Hanya 4 langkah mudah untuk memulai perjalananmu</p>
+
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-number">01</div>
+                <div class="step-icon">📍</div>
+                <h3>Pilih Lokasi</h3>
+                <p>Tentukan kota penjemputan dan tujuan perjalananmu.</p>
+            </div>
+            <div class="step-connector"></div>
+            <div class="step">
+                <div class="step-number">02</div>
+                <div class="step-icon">📅</div>
+                <h3>Tentukan Tanggal</h3>
+                <p>Pilih tanggal mulai dan selesai sewa sesuai kebutuhanmu.</p>
+            </div>
+            <div class="step-connector"></div>
+            <div class="step">
+                <div class="step-number">03</div>
+                <div class="step-icon">🚗</div>
+                <h3>Pilih Mobil</h3>
+                <p>Temukan kendaraan yang cocok dari koleksi kami.</p>
+            </div>
+            <div class="step-connector"></div>
+            <div class="step">
+                <div class="step-number">04</div>
+                <div class="step-icon">✅</div>
+                <h3>Konfirmasi</h3>
+                <p>Isi data pemesanan dan nikmati perjalananmu!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKING FORM -->
+    <section class="booking" id="booking">
+        <div class="booking-inner">
+            <div class="booking-text">
+                <div class="section-label">Reservasi</div>
+                <h2 class="section-title" style="color:white;">Form Pemesanan</h2>
+                <p style="color:rgba(255,255,255,0.6); margin-top:.5em; line-height:1.7;">
+                    Isi formulir di bawah ini dan tim kami akan menghubungi kamu untuk konfirmasi pemesanan dalam waktu kurang dari 1 jam.
+                </p>
+                <ul class="booking-perks">
+                    <li>✔ Tidak ada biaya tersembunyi</li>
+                    <li>✔ Pembatalan gratis hingga 24 jam sebelumnya</li>
+                    <li>✔ Asuransi sudah termasuk</li>
+                </ul>
+            </div>
+            <form class="booking-form" onsubmit="handleBooking(event)">
+                <div class="booking-row">
+                    <div class="booking-field">
+                        <label>Nama Lengkap</label>
+                        <input type="text" placeholder="John Doe" required>
+                    </div>
+                    <div class="booking-field">
+                        <label>Nomor Telepon</label>
+                        <input type="tel" placeholder="+62 812 3456 7890" required>
+                    </div>
+                </div>
+                <div class="booking-row">
+                    <div class="booking-field">
+                        <label>Email</label>
+                        <input type="email" placeholder="john@email.com" required>
+                    </div>
+                    <div class="booking-field">
+                        <label>Pilih Mobil</label>
+                        <select required>
+                            <option value="">-- Pilih Mobil --</option>
+                            <option>Toyota Avanza – Rp 350.000/hari</option>
+                            <option>Honda Jazz – Rp 300.000/hari</option>
+                            <option>Mitsubishi Pajero – Rp 650.000/hari</option>
+                            <option>Toyota Innova – Rp 500.000/hari</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="booking-row">
+                    <div class="booking-field">
+                        <label>Tanggal Mulai</label>
+                        <input type="date" required>
+                    </div>
+                    <div class="booking-field">
+                        <label>Tanggal Selesai</label>
+                        <input type="date" required>
+                    </div>
+                </div>
+                <div class="booking-field full-width">
+                    <label>Lokasi Penjemputan</label>
+                    <select required>
+                        <option value="">-- Pilih Lokasi --</option>
+                        <option>Yogyakarta</option>
+                        <option>Bali</option>
+                    </select>
+                </div>
+                <div class="booking-field full-width">
+                    <label>Catatan Tambahan</label>
+                    <textarea placeholder="Contoh: Butuh baby seat, supir, dsb." rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn-primary booking-submit">Kirim Pemesanan →</button>
+                <div class="booking-success" id="bookingSuccess">
+                     Pemesanan berhasil dikirim! Tim kami akan menghubungi kamu segera.
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="logo footer-logo">CarR</div>
+                <p>Platform rental mobil terpercaya di Indonesia. Perjalanan nyaman, harga terjangkau.</p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="WhatsApp">💬</a>
+                    <a href="#" aria-label="Facebook">📘</a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Layanan</h4>
+                <ul>
+                    <li><a href="#">Sewa Harian</a></li>
+                    <li><a href="#">Sewa Mingguan</a></li>
+                    <li><a href="#">Sewa Bulanan</a></li>
+                    <li><a href="#">Dengan Supir</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Lokasi</h4>
+                <ul>
+                    <li><a href="#">Yogyakarta</a></li>
+                    <li><a href="#">Bali</a></li>
+                    <li><a href="#">Jakarta</a></li>
+                    <li><a href="#">Surabaya</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Kontak</h4>
+                <ul>
+                    <li><a href="#">+62 812 0000 1234</a></li>
+                    <li><a href="#">info@carr.id</a></li>
+                    <li><a href="#">Jl.Pogung Raya no.26, Yogyakarta</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 CarR. All rights reserved.</span>
+            <span>Made in Indonesia</span>
+        </div>
+    </footer>
+
+    <script>
+        function handleBooking(e) {
+            e.preventDefault();
+            document.getElementById('bookingSuccess').style.display = 'block';
+            e.target.reset();
+            setTimeout(() => {
+                document.getElementById('bookingSuccess').style.display = 'none';
+            }, 5000);
+        }
+    </script>
+
+</body>
+
+</html>
