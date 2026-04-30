@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Software House IT</title>
+		<meta charset="UTf-8">
+		<link rel="stylesheet" href="style.css">
+		<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<nav>
+	        <h1 class="logo"><b>SoftwareHIT<b></h1>
+	        <ul class="taskbar">
+	            <li><a href="https://www.google.com/?hl=ID">Services</a></li>
+	            <li><a href="https://www.google.com/?hl=ID">Contact</a></li>
+	            <li><a href="https://www.google.com/?hl=ID">About</a></li>
+	        </ul> 
+    `	</nav>
+    	<section id="search">
+	        <div class="title">
+	            <h1>Software House</h1>
+	            <p>Software House Modern jasa pengembangan Software Custom<br> Untuk Website, Mobile, Desktop dan Cloud</p>
+	            <hr>
+	            <div class="hero-btns">
+			      <a href="#projects" class="btn-primary"> Download Software</a>
+			      <a href="#contact" class="btn-outline"> Pre-Order Request </a>
+			    </div>
+			    <form action="/search" class="form-search">
+    				<input type="search" placeholder="Cari sesuatu..">
+    				<button type="submit" class="btn-search">Cari</button>
+				</form>
+	        </div>
+	     </section>
+	  	
+    <section class="how-it-works">
+        <div class="section-label"> Cara Pengunaan Software House</div>
+        <h2 class="section-title">Download atau Pre-order</h2>
+        <p class="section-sub">Hanya 4 langkah mudah untuk dilakukan</p>
+
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-number">01</div>
+                <div class="step-icon">🖨</div>
+                <h3>Download</h3>
+                <p>Tentukan Software Yang Ingin Digunakan</p>
+            </div>
+            <div class="step-connector"></div>
+            <div class="step">
+                <div class="step-number">02</div>
+                <div class="step-icon">📲</div>
+                <h3>Instal Software</h3>
+                <p>Lakukan Prosedure Penginstalan</p>
+            </div>
+            <div class="step-connector"></div>
+            <div class="step">
+                <div class="step-number">03</div>
+                <div class="step-icon">🖥</div>
+                <h3>Akses</h3>
+                <p>Kemudian Anda Bisa Akses dengan Mudah</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="logo footer-logo">SoftwareHIT</div>
+                <p>Platform Software house company IT</p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="WhatsApp">💬</a>
+                    <a href="#" aria-label="Facebook">📘</a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Layanan</h4>
+                <ul>
+                    <li><a href="#">langganan Bulanan</a></li>
+                    <li><a href="#">langganan tahunan</a></li>
+
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Akses</h4>
+                <ul>
+                    <li><a href="#">Website</a></li>
+                    <li><a href="#">Aplika</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Kontak</h4>
+                <ul>
+                    <li><a href="#">+62 812 0000 1234</a></li>
+                    <li><a href="#">softwarehouse.id</a></li>
+                    <li><a href="#">Jl.Pogung Raya no.26, Yogyakarta</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 software house. All rights reserved.</span>
+            <span>Made in Indonesia</span>
+        </div>
+    </footer>
+
+    <script>
+        function handleBooking(e) {
+            e.preventDefault();
+            document.getElementById('bookingSuccess').style.display = 'block';
+            e.target.reset();
+            setTimeout(() => {
+                document.getElementById('bookingSuccess').style.display = 'none';
+            }, 5000);
+        }
+    </script>
+	</body>
+</html>
