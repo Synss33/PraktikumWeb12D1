@@ -67,8 +67,6 @@ nav {
   }
   .btn-outline:hover{border-color: darkblue;background:rgba(0,212,255,.07)}
 
-
-
 .how-it-works {
     background: #0d1117;
     padding: 5rem 2rem;
@@ -208,12 +206,12 @@ footer {
 }
 .section-sub { color: rgba(232, 244, 253, 0.55); font-size: 1rem; max-width: 500px; }
 
-/* Hero Buttons */
 .hero-btns {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
   margin-bottom: 28px;
+  justify-content: center;
 }
 
 .btn-primary {
