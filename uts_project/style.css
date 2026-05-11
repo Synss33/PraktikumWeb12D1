@@ -126,7 +126,7 @@ h3 { font-size: 1.35rem; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: url('https://images.unsplash.com/photo-1554931670-4ebfabf6e7a9?w=1800&q=85') center/cover no-repeat;
+  background: url('https://cdn.pixabay.com/photo/2020/07/03/10/28/waterfall-5365926_640.jpg') center/cover no-repeat;
   will-change: transform;
 }
 .hero-overlay {
@@ -229,6 +229,7 @@ h3 { font-size: 1.35rem; }
   color: #ffffff;
 }
 
+.section-title.dark { color: #1a2014; }
 .about { background: #ffffff; }
 .about-grid {
   display: grid;
@@ -295,7 +296,7 @@ h3 { font-size: 1.35rem; }
 .section-header { text-align: center; margin-bottom: 56px; }
 
 .section-pad { padding: 50px 0; }
-.bg-dark { background: #1a2e1a; }
+.bg-dark { background: #2d5a27; }
 .bg-earth { background: #f5f0e8; }
 .dest-grid {
   display: grid;
