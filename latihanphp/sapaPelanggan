@@ -1,0 +1,7 @@
+<?php 
+	function sapaPelanggan($nama) {
+		echo "hallo $nama";
+	}
+
+	sapaPelanggan("isa"); 
+ ?>
